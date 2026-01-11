@@ -1,0 +1,12 @@
+function toSnakeCase(text) {
+  return text
+    .replace(/([a-z])([A-Z])/g, '$1_$2') // Insert underscore between lowercase and uppercase
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1_$2') // Handle consecutive uppercase letters
+    .replace(/[\s-]/g, '_') // Replace spaces and hyphens with underscores
+    .toLowerCase(); // Convert to lowercase
+}
+
+// Example usage:
+// console.log(toSnakeCase("helloWorld")); // "hello_world"
+// console.log(toSnakeCase("HelloWorldTest")); // "hello_world_test"
+// console.log(toSnakeCase("hello-world test")); // "hello_world_test"
